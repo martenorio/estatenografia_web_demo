@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Esteganografía LSB en JS</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="main">
+    <canvas id="c" class="matrix"></canvas>
+    <div class="content">
+      <div class="form">
+        <div class="container">
+          <h2>🕵️ Esteganografía LSB en Imágenes (JavaScript)</h2>
+
+          <input type="file" id="imageInput" accept="image/png">
+          <div>
+            <textarea id="messageInput" placeholder="Escribe el mensaje que deseas ocultar..."></textarea>
+            <p id="messageInfo">Bytes escritos: 0 / ?</p>
+            <p id="maxSize">Tamaño máximo permitido: -</p>
+            <p id="maxSize">Tamaño máximo permitido: -</p>
+          </div>
+          <div class="manage-buttons">
+            <button onclick="hideMessage()" style="width: 100%">🔐 Ocultar mensaje</button>
+            <button onclick="extractMessage()" style="width: 100%;">🔓 Extraer mensaje</button>
+          </div>
+
+          <canvas id="canvas" class="canvas-image"></canvas>
+
+          <button onclick="downloadImage()">💾 Descargar imagen con mensaje</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./matrix.js"></script>
+  <script src="./estatenografia.js"></script>
+</body>
+
+</html>
